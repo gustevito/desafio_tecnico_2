@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:minimal_ecommerce_app/components/drawer.dart';
-import 'package:minimal_ecommerce_app/components/books_tile.dart';
+
 import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../models/book_list.dart';
+import '../../components/books_tile.dart';
+import '../../components/drawer.dart';
+import '../../models/book_list.dart';
 
 class MyHome extends StatelessWidget {
   const MyHome({super.key});
@@ -25,7 +26,7 @@ class MyHome extends StatelessWidget {
         foregroundColor: Theme.of(context).colorScheme.inversePrimary,
 
         // logo
-        title: ImageIcon(
+        title: const ImageIcon(
           AssetImage('assets/logos/ebooks.png'),
           size: 120,
         ),
@@ -46,7 +47,7 @@ class MyHome extends StatelessWidget {
         children: [
           // title
           Padding(
-            padding: const EdgeInsets.fromLTRB(25, 20, 20, 0),
+            padding: const EdgeInsets.fromLTRB(25, 20, 20, 5),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -63,34 +64,35 @@ class MyHome extends StatelessWidget {
                   ],
                 ),
                 Container(
-                    decoration: BoxDecoration(
-                      color: Theme.of(context).colorScheme.primary,
-                      border: Border.all(
-                        color: Theme.of(context).colorScheme.secondary,
-                      ),
-                      borderRadius: BorderRadius.circular(12),
+                  decoration: BoxDecoration(
+                    color: Theme.of(context).colorScheme.primary,
+                    border: Border.all(
+                      color: Theme.of(context).colorScheme.secondary,
                     ),
-                    child: IconButton(
-                      icon: const Icon(
-                        Icons.collections_bookmark,
-                        size: 20,
-                      ),
-                      onPressed: () {
-                        Navigator.pushNamed(context, '/cartpage');
-                      },
-                    )),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: IconButton(
+                    icon: const Icon(
+                      Icons.collections_bookmark,
+                      size: 20,
+                    ),
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/cartpage');
+                    },
+                  ),
+                ),
               ],
             ),
           ),
           // books
           Flexible(
             child: GridView.builder(
-              gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-                maxCrossAxisExtent: 400,
-                mainAxisExtent: 270,
+              gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                maxCrossAxisExtent: 380,
+                mainAxisExtent: 272,
               ),
               scrollDirection: Axis.vertical,
-              padding: const EdgeInsets.all(15),
+              padding: const EdgeInsets.all(10),
               itemCount: books.length,
               itemBuilder: ((context, index) {
                 // get each book from the booklist

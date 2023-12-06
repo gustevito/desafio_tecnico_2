@@ -2,13 +2,14 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:minimal_ecommerce_app/models/book_list.dart';
-import 'package:minimal_ecommerce_app/pages/favorites.dart';
-import 'package:minimal_ecommerce_app/pages/home.dart';
-import 'package:minimal_ecommerce_app/themes/apptheme.dart';
+
 import 'package:provider/provider.dart';
 
-import 'pages/intropage.dart';
+import 'modules/models/book_list.dart';
+import 'modules/favorites/presenter/favorites.dart';
+import 'modules/home/presenter/home.dart';
+import 'modules/intro/presenter/intropage.dart';
+import 'modules/themes/apptheme.dart';
 
 void main() {
   runApp(

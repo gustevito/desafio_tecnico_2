@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:minimal_ecommerce_app/models/book.dart';
+
 import 'package:google_fonts/google_fonts.dart';
-import 'package:minimal_ecommerce_app/models/book_list.dart';
+
 import 'package:provider/provider.dart';
+
+import '../models/book.dart';
+import '../models/book_list.dart';
 
 class BookTile extends StatelessWidget {
   final Book book;
@@ -132,8 +135,6 @@ class BookTile extends StatelessWidget {
             fontWeight: FontWeight.w800,
           ),
         ),
-
-        const SizedBox(height: 6),
 
         // description
         Text(

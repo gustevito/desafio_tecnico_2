@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:minimal_ecommerce_app/components/button.dart';
+import 'package:desafio_tecnico_2/modules/components/button.dart';
 import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../components/favs_tile.dart';
-import '../models/book.dart';
-import '../models/book_list.dart';
+import '../../components/favs_tile.dart';
+import '../../models/book.dart';
+import '../../models/book_list.dart';
 
 class CartPage extends StatelessWidget {
   const CartPage({super.key});
@@ -56,7 +56,7 @@ class CartPage extends StatelessWidget {
                   // return as a cart tile
                   return CartTile(
                       title: Text(item.name),
-                      subtitle: Text(item.price.toStringAsFixed(2)),
+                      subtitle: Text(item.description),
                       onPressed: () {
                         var snack;
                         void closeSnack() {
