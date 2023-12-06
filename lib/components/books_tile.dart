@@ -75,7 +75,9 @@ class BookTile extends StatelessWidget {
                                     const Duration(milliseconds: 200),
                                 mainButton: TextButton(
                                   onPressed: () {
-                                    context.read<BookList>().removeFromCart(book);
+                                    context
+                                        .read<BookList>()
+                                        .removeFromCart(book);
                                     closeSnack();
                                   },
                                   child: Container(
@@ -103,7 +105,6 @@ class BookTile extends StatelessWidget {
                       ],
                     ),
                   ),
-                  const SizedBox(height: 25),
                 ],
               ),
 

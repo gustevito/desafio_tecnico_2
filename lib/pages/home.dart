@@ -42,8 +42,7 @@ class MyHome extends StatelessWidget {
           )
         ],
       ),
-      body: ListView(
-        scrollDirection: Axis.vertical,
+      body: Column(
         children: [
           // title
           Padding(
@@ -84,10 +83,13 @@ class MyHome extends StatelessWidget {
             ),
           ),
           // books
-          SizedBox(
-            height: 320,
-            child: ListView.builder(
-              scrollDirection: Axis.horizontal,
+          Flexible(
+            child: GridView.builder(
+              gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                maxCrossAxisExtent: 400,
+                mainAxisExtent: 270,
+              ),
+              scrollDirection: Axis.vertical,
               padding: const EdgeInsets.all(15),
               itemCount: books.length,
               itemBuilder: ((context, index) {
